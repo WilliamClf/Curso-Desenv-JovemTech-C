@@ -4,7 +4,7 @@
 
 void main()
 {
-    char string[9] = {'a', 'l', 'g', 'o', 'r', 'i', 't', 'm', 'o'};
+    char string[] = "algoritmo";
     int n = 9;
 
     for (int i = 0; i < n - 1; i++)
@@ -14,10 +14,11 @@ void main()
             if (string[j] > string[j + 1])
             {
 
-                int aux = string[j];
+                char aux = string[j];
                 string[j] = string[j + 1];
                 string[j + 1] = aux;
             }
         }
     }
+    printf("String ordenada: %s\n", string);
 }

@@ -10,7 +10,8 @@ void main()
 {
     int vs[16] = {3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1};
     int vbs[16] = {3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1};
-    int vis[16] = {3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1};
+    int vis1[16] = {3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1};
+    int vis2[16] = {3, 4, 9, 2, 5, 8, 2, 1, 7, 4, 6, 2, 9, 8, 5, 1};
     int min, i, j, aux;
     int n = 16;
 
@@ -60,7 +61,44 @@ void main()
         printf("%d ", vbs[i]);
     }
 
-    printf("\n*****************Inserction*****************\n");
+    printf("\n*****************InserctionIdeia1*****************\n");
 
-    
+    for (int i = 1; i < n; i++)
+    {
+        aux = vis1[i];
+        int j = i - 1;
+
+        while (j >= 0 && aux < vis1[j])
+        {
+            vis1[j + 1] = vis1[j];
+            j--;
+        }
+
+        vis1[j + 1] = aux;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", vis1[i]);
+    }
+
+    printf("\n*****************InserctionIdeia2*****************\n");
+
+    for (int i = 2; i < n; i++)
+    {
+        aux = vis2[i];
+        int j = i - 1;
+
+        while (j >= 0 && aux < vis2[j])
+        {
+            vis2[j + 1] = vis2[j];
+            j--;
+        }
+        vis2[j + 1] = aux;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", vis2[i]);
+    }
 }
