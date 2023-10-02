@@ -45,8 +45,7 @@ void main()
             alunaComCRMaisAlto[j] = '\0';
         }
     }
-
-    // Verificando se uma aluna foi encontrada e imprimindo os resultados
+    
     if (CRMaisAlto != -1)
     {
         printf("A aluna com o CR mais alto no curso %d é %s com um CR de %d.\n", codBuscado, alunaComCRMaisAlto, CRMaisAlto);
@@ -55,5 +54,4 @@ void main()
     {
         printf("Nenhuma aluna encontrada no curso %d.\n", codBuscado);
     }
-}
 }
